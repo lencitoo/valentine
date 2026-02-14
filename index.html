@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Len 💙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:linear-gradient(to bottom, #fdfbfb, #e6f0ff);
+    overflow-x:hidden;
+}
+
+/* Intro */
+.intro{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    transition:opacity 1.2s ease;
+}
+
+.intro h1{
+    font-family:'Playfair Display', serif;
+    color:#3a6ea5;
+    font-size:2.2em;
+}
+
+.intro p{
+    margin-top:15px;
+    color:#6b8db6;
+}
+
+.intro button{
+    margin-top:30px;
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:#cfe2ff;
+    color:#3a6ea5;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.intro button:hover{
+    background:#3a6ea5;
+    color:white;
+}
+
+/* Poema */
+.carta{
+    display:none;
+    max-width:750px;
+    margin:80px auto;
+    background:white;
+    padding:70px;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    animation:fadeIn 2s ease;
+}
+
+.carta h2{
+    font-family:'Playfair Display', serif;
+    font-size:2.5em;
+    color:#3a6ea5;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.poema{
+    white-space:pre-line;
+    font-size:1.15em;
+    line-height:2;
+    color:#2c3e50;
+    font-weight:300;
+    text-align:center;
+}
+
+.highlight{
+    color:#3a6ea5;
+    font-weight:500;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Corazones */
+.heart{
+    position:fixed;
+    font-size:15px;
+    opacity:0.3;
+    animation:float 9s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh);}
+    100%{transform:translateY(-10vh);}
+}
+
+footer{
+    text-align:center;
+    margin-top:50px;
+    font-size:0.9em;
+    color:#8faedb;
+}
+
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro">
+    <h1>¿Pensaste que serías espectador en este San Valentín? 😌</h1>
+    <p>Pues no jajajaja 💙<br>
+    Haz click aquí para que veas algo.<br>
+    <em>(pd: es muy cursi jskkakj)</em></p>
+    <button onclick="abrirCarta()">Haz click aquí ✨</button>
+</div>
+
+<div class="carta" id="carta">
+
+<h2>Para Len 💙</h2>
+
+<div class="poema">
+Es curioso cómo la distancia
+intenta jugar a la indiferencia,
+pero no entiende de constancia
+ni sabe medir la presencia.
+
+Porque aunque estés lejos de mí,
+hay algo que se siente cercano,
+como si el destino dijera “sí”
+y nos tomara de la mano.
+
+Nos conocimos hace tan poco,
+apenas días en el calendario,
+y aun así cambiaste mi foco,
+volviéndote algo necesario.
+
+Hay algo en tu voz que me calma,
+algo en tu risa que me sostiene,
+como si hablaras directo al alma
+y todo en mí se detiene.
+
+Tus <span class="highlight">ojos marrones</span>, tan sinceros,
+tu <span class="highlight">pelito rizado</span> al natural,
+y ese <span class="highlight">acento santiaguero</span>
+que suena tan dulce y especial.
+
+Pero más que todo eso,
+más que cualquier detalle bonito,
+me gusta tu forma de dar afecto,
+tu corazón suave y bendito.
+
+Quiero seguir conociéndote lento,
+sin prisa pero sin pausa,
+dejando que crezca el sentimiento
+como quien escribe una causa.
+
+Y si algún día llega el enojo,
+si el orgullo intenta entrar,
+prometo pensar en tus ojos
+y aprender a conversar.
+
+Prometo quedarme presente,
+prometo saber escuchar,
+porque cuando algo se siente,
+vale la pena cuidar.
+
+No sé qué diga el destino,
+ni qué escriba el mañana,
+pero sé que encontrarte en mi camino
+fue una coincidencia sana.
+
+Gracias por aparecer,
+gracias por hacerme sentir,
+que incluso sin poderte ver,
+hay algo bonito por construir.
+
+Y si este es solo el comienzo,
+que sea suave y verdadero,
+porque lo que hoy siento
+es simple… pero sincero. 💙
+</div>
+
+<footer>
+Hecho con el coñañon :3 .
+  Rob
+</footer>
+
+</div>
+
+
+<script>
+
+function abrirCarta(){
+    document.getElementById("intro").style.opacity="0";
+    setTimeout(()=>{
+        document.getElementById("intro").style.display="none";
+        document.getElementById("carta").style.display="block";
+    },1000);
+}
+
+function crearCorazon(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="🤍";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*5+5)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),9000);
+}
+
+setInterval(crearCorazon,1200);
+
+</script>
+
+</body>
+</html>
